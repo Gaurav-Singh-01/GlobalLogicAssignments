@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+D:\globallogic_training\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2427463281.index
+\MyMavenWeb\src\main\resources
+D:\globallogic_training\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3754229226.index
+\MyMavenWeb\src\main\resources

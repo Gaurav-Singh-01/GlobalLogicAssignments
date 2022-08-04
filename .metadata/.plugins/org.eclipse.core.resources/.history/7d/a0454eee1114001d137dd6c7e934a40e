@@ -1,0 +1,5 @@
+package com.globallogic.servlets;
+
+public @interface WebServlet {
+
+}
