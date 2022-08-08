@@ -41,17 +41,7 @@ public class AddEmployeeDetailsController extends HttpServlet {
 	String date =  request.getParameter("hireDate");
 	double salary = Double.parseDouble(request.getParameter("salary"));
 	
-//	System.out.println("Userid : "+id);
-//	System.out.println("Password : "+pass);
-//	System.out.println("Type : "+type);
-//	System.out.println("FirstName : "+fName);
-//	System.out.println("Last Name : "+lName);
-//	System.out.println("Address : "+address);
-//	System.out.println("Phone : "+phone);
-//	System.out.println("Email : "+email);
-//	System.out.println("Gender : "+gender);
-//	System.out.println("Date : "+date);
-//	System.out.println("Salary : "+salary);
+
 	
 	Employee e  = new Employee(id,pass,type,fName,lName,address,phone,email,gender,date,salary);
 	Query q = new Query();

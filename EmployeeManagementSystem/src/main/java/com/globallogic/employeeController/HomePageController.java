@@ -26,20 +26,15 @@ public class HomePageController extends HttpServlet {
 		System.out.println("Username : " + name);
 		System.out.println("Password : " + password);
 		if (name.equalsIgnoreCase("Gaurav") && password.equalsIgnoreCase("Gaurav")) {
-					
-			try {
-				listEmployee(request, response);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ServletException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			List<Employee> employees = new Query().selectAllEmployee();
+			System.out.println(employees);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+			request.setAttribute("listemployee", employees);
+			dispatcher.forward(request, response);	
+			
 		} else {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/error.jsp");
+			dispatcher.forward(request, response);
 			System.out.println("Incorrect id/password");
 		}
 		
@@ -48,39 +43,10 @@ public class HomePageController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		String name = request.getParameter("username");
-//		String password = request.getParameter("password");
-//
-//		System.out.println("Username : " + name);
-//		System.out.println("Password : " + password);
-//		if (name.equalsIgnoreCase("Gaurav") && password.equalsIgnoreCase("Gaurav")) {
-//					
-//			try {
-//				listEmployee(request, response);
-//			} catch (SQLException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			} catch (ServletException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		} else {
-//			System.out.println("Incorrect id/password");
-//		}
+
 
 	}
 
-	private void listEmployee(HttpServletRequest request, HttpServletResponse response)
-			throws SQLException, IOException, ServletException {
-		List<Employee> employees = new Query().selectAllEmployee();
-		System.out.println(employees);
-		
-		request.setAttribute("listemployee", employees);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
-		dispatcher.forward(request, response);
-	}
+	
 
 }

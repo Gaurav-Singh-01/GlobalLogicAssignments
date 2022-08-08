@@ -12,29 +12,29 @@
 <h1><center>UPDATE EMPLOYEE DETAILS PAGE </center></h1>
 <h2>
 
-<form method="POST" action="UpdateEmployeeDetailsController">
+<form method="GET" action="UpdateEmployeeDetailsController">
 
-<label>Employee Id : </label><input type="text" name="id"  /disabled><label></label>
+<label>Employee Id : </label><input type="text" name="id" value="<%= request.getAttribute("empId") %>"disabled>
 <br><br>
-<label>Password : </label><input type="password" name="password">
+<label>Password : </label><input type="password" name="password" value="<%= request.getAttribute("pass") %>">
 <br><br>
-<label>Employee Type : </label><input type="text" name="type">
+<label>Employee Type : </label><input type="text" name="type" value="<%= request.getAttribute("type") %>">
 <br><br>
-<label>First Name : </label><input type="text" name="first">
+<label>First Name : </label><input type="text" name="first" value="<%= request.getAttribute("first") %>">
 <br><br>
-<label>Last Name : </label><input type="text" name="last">
+<label>Last Name : </label><input type="text" name="last" value="<%= request.getAttribute("last") %>">
 <br><br>
-<label>Address : </label><input type="text" name="address">
+<label>Address : </label><input type="text" name="address" value="<%= request.getAttribute("address") %>">
 <br><br>
-<label>Phone No : </label><input type="text" name="phone">
+<label>Phone No : </label><input type="text" name="phone" value="<%= request.getAttribute("phone") %>">
 <br><br>
-<label>Email : </label><input type="text" name="email">
+<label>Email : </label><input type="text" name="email" value="<%= request.getAttribute("email") %>">
 <br><br>
-<label>Gender : </label><input type="text" name="gender">
+<label>Gender : </label><input type="text" name="gender" value="<%= request.getAttribute("gender") %>">
 <br><br>
-<label>Hire Date : </label><input type="date" name="hireDate">
+<label>Hire Date : </label><input type="date" name="hireDate" value="<%= request.getAttribute("hire") %>">
 <br><br>
-<label>Salary : </label><input type="number" name="salary">
+<label>Salary : </label><input type="number" name="salary" value="<%= request.getAttribute("sal") %>">
 <br><br>
 
 <input type="submit" value="submit">
