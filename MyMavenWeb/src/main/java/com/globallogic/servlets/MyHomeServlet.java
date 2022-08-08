@@ -22,6 +22,7 @@ public class MyHomeServlet extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		//how to return a page using servlet
 		System.out.println("Servicing");
 		RequestDispatcher rd = request.getRequestDispatcher("/home.html");
 		rd.forward(request, response);
