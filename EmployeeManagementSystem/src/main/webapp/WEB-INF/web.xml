@@ -28,18 +28,16 @@
   	<description></description>
   	<servlet-class>com.globallogic.employeeController.UpdateEmployeeDetailsController</servlet-class>
   </servlet>
+
+ 
+ 
   <servlet>
-  	<servlet-name>DeleteEmployeeDetailsByIdController</servlet-name>
-  	<display-name>DeleteEmployeeDetailsByIdController</display-name>
+  	<servlet-name>EditEmployeeByTag</servlet-name>
+  	<display-name>EditEmployeeByTag</display-name>
   	<description></description>
-  	<servlet-class>com.globallogic.employeeController.DeleteEmployeeDetailsController</servlet-class>
+  	<servlet-class>com.globallogic.employeeController.EditEmployeeByTag</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>UpdateEmployeeDetailsControllers</servlet-name>
-  	<display-name>UpdateEmployeeDetailsControllers</display-name>
-  	<description></description>
-  	<servlet-class>com.globallogic.employeeController.UpdateEmployeeDetailsController</servlet-class>
-  </servlet>
+  
   <servlet-mapping>
   	<servlet-name>HomePageController</servlet-name>
   	<url-pattern>/HomePageController</url-pattern>
@@ -56,12 +54,12 @@
   	<servlet-name>UpdateEmployeeDetailsController</servlet-name>
   	<url-pattern>/UpdateEmployeeDetailsController</url-pattern>
   </servlet-mapping>
+ 
+ 
+
+  
   <servlet-mapping>
-  	<servlet-name>DeleteEmployeeDetailsByIdController</servlet-name>
-  	<url-pattern>/DeleteEmployeeDetailsByIdController</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>UpdateEmployeeDetailsControllers</servlet-name>
-  	<url-pattern>/UpdateEmployeeDetailsControllers</url-pattern>
+  	<servlet-name>EditEmployeeByTag</servlet-name>
+  	<url-pattern>/edit</url-pattern>
   </servlet-mapping>
 </web-app>

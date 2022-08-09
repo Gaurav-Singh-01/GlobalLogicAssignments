@@ -161,28 +161,33 @@ int status = 0;
 		int status = 0;
 		String str = e.getHireDate();
 		Date date = Date.valueOf(str);
-		String strUpdate = "Update employee set EmployeeId=?,Password=?, EmployeeType=?, FirstName=?, LastName=?, Address=?, PhoneNo=?, Email=?, Gender=?, HireDate=?, Salary=? where EmployeeId = ";
+		
+		System.out.println(e);
+		String strUpdate = "Update employee set Password=?, EmployeeType=?, FirstName=?, LastName=?, Address=?, PhoneNo=?, Email=?, Gender=?, HireDate=?, Salary=? where EmployeeId = ?";
 
 		try {
 			ps = con.prepareStatement(strUpdate);
 
-			ps.setString(1, e.getEmployeeId());
-			ps.setString(2, e.getPassword());
-			ps.setString(3, e.getEmployeeType());
-			ps.setString(4, e.getFirstName());
-			ps.setString(5, e.getLastName());
-			ps.setString(6, e.getAddress());
-			ps.setString(7, e.getPhoneNo());
-			ps.setString(8, e.getEmail());
-			ps.setString(9, e.getGender());
-			ps.setDate(10, date);
-			ps.setDouble(11, e.getSalary());
-			ps.setString(12, e.getEmployeeId());
+			ps.setString(1, e.getPassword());
+			ps.setString(2, e.getEmployeeType());
+			ps.setString(3, e.getFirstName());
+			ps.setString(4, e.getLastName());
+			ps.setString(5, e.getAddress());
+			ps.setString(6, e.getPhoneNo());
+			ps.setString(7, e.getEmail());
+			ps.setString(8, e.getGender());
+			ps.setDate(9 ,date);
+			ps.setDouble(10, e.getSalary());
+			ps.setString(11, e.getEmployeeId());
+			
+			System.out.println(e);
 
 			int row_status = ps.executeUpdate();
 
 			if (row_status > 0) {
+				System.out.println(e);
 				System.out.println("Data updated successfully");
+				e=null;
 				status = 1;
 			}
 

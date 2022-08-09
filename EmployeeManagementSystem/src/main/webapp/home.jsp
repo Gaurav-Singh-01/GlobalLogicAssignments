@@ -34,7 +34,7 @@ ${list}
 		</div>
 		<div class="p-3 mb-2 bg-secondary text-white">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<a class="navbar-brand" href="#">HOME</a>
+				<a class="navbar-brand" href="index.jsp">HOME</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -61,9 +61,9 @@ ${list}
 
 
 					</ul>
-					<form class="form-inline my-2 my-lg-0">
+					<form class="form-inline my-2 my-lg-0" >
 						<input class="form-control mr-sm-2" type="search"
-							placeholder="Search" aria-label="Search">
+							placeholder="Search" aria-label="Search" >
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 					</form>
 				</div>
@@ -96,8 +96,9 @@ ${list}
 					<td><%=ee.getEmployeeType()%></td>
 					<td><%=ee.getFirstName()%></td>
 					<td><%=ee.getEmail()%></td>
-					<td><a href="edit?id=<%=ee.getEmployeeId()%>">Edit</a>
-						&nbsp;&nbsp; <a href="delete?id=<%=ee.getEmployeeId()%>">Delete</a></td>  
+                    <td><a href="edit?id1=<%= ee.getEmployeeId() %>">Edit</a>
+								&nbsp;&nbsp;&nbsp;&nbsp; <a
+								href="delete?id2=<%= ee.getEmployeeId() %>">Delete</a></td>  
 
 				</tr>
 

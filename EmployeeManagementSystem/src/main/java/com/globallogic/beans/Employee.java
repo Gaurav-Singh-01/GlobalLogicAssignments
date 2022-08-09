@@ -5,10 +5,14 @@ public class Employee {
 	String employeeId,password, employeeType, firstName, lastName, address, phoneNo, email, gender, hireDate;
 	double salary;
 	
+	
+
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ",employeeType=" + employeeType
-				+ ", firstName=" + firstName + ",email=" + email + "]";
+		return "Employee [employeeId=" + employeeId + ", password=" + password + ", employeeType=" + employeeType
+				+ ", firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", phoneNo="
+				+ phoneNo + ", email=" + email + ", gender=" + gender + ", hireDate=" + hireDate + ", salary=" + salary
+				+ "]";
 	}
 
 	public String getEmployeeId() {

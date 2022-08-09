@@ -14,9 +14,9 @@
 
 <form method="GET" action="UpdateEmployeeDetailsController">
 
-<label>Employee Id : </label><input type="text" name="id" value="<%= request.getAttribute("empId") %>"disabled>
+<label>Employee Id : </label><input type="text" name="id" value="<%= request.getAttribute("empId") %>" disabled>
 <br><br>
-<label>Password : </label><input type="password" name="password" value="<%= request.getAttribute("pass") %>">
+<label>Password : </label><input type="text" name="password" value="<%= request.getAttribute("pass") %>">
 <br><br>
 <label>Employee Type : </label><input type="text" name="type" value="<%= request.getAttribute("type") %>">
 <br><br>
