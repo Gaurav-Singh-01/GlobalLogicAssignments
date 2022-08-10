@@ -12,7 +12,7 @@
 <h1><center>UPDATE EMPLOYEE DETAILS PAGE </center></h1>
 <h2>
 
-<form method="GET" action="UpdateEmployeeDetailsController">
+<form method="POST" action="UpdateEmployeeDetailsController">
 
 <label>Employee Id : </label><input type="text" name="id" value="<%= request.getAttribute("empId") %>" disabled>
 <br><br>

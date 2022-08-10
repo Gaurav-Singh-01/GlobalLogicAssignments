@@ -30,16 +30,7 @@ public class HomePageController extends HttpServlet {
 			System.out.println(employees);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
 			request.setAttribute("listemployee", employees);
-			dispatcher.forward(request, response);	
-			
-			System.out.println("In Home Controller");
-			String action = request.getServletPath();
-			System.out.println(action);
-			if(action.equals("/delete")) {
-				System.out.println("Delete");
-				String empId = request.getParameter("id2");
-				System.out.println(empId);
-			}
+			dispatcher.forward(request, response);
 			
 		} else {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/error.jsp");

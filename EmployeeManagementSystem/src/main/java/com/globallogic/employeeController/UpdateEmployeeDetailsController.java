@@ -22,6 +22,33 @@ public class UpdateEmployeeDetailsController extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.println("COMING FROM ENTER ID TO UPDATE PAGE");
+		id  = request.getParameter("updateid");
+		System.out.println("id got from ENTER ID TO UPDATE PAGE"+id+" POst Method");
+		Query q = new Query();
+		System.out.println("GOING TO QUERY CLASS->TO SELECT EMPLOYEE DETAILS BY ID WHICH GOT FROM ENTER ID TO UPDATE PAGE");
+		Employee emp = q.selectEmployeeById(id);
+		System.out.println(emp);
+		RequestDispatcher rs = request.getRequestDispatcher("/updateEmployee.jsp");
+		request.setAttribute("empId",emp.getEmployeeId());
+		request.setAttribute("pass",emp.getPassword());
+		request.setAttribute("type",emp.getEmployeeType());
+		request.setAttribute("first",emp.getFirstName());
+		request.setAttribute("last",emp.getLastName());
+		request.setAttribute("address",emp.getAddress());
+		request.setAttribute("phone",emp.getPhoneNo());
+		request.setAttribute("email",emp.getEmail());
+		request.setAttribute("gender",emp.getGender());
+		request.setAttribute("hire",emp.getHireDate());
+		request.setAttribute("sal",emp.getSalary());
+		rs.forward(request, response);
+		
+		
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String pass = request.getParameter("password");
 		String type = request.getParameter("type");
 		String fName =  request.getParameter("first");
@@ -48,31 +75,7 @@ public class UpdateEmployeeDetailsController extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
 		
 		dispatcher.forward(request, response);
-		
-	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("COMING FROM ENTER ID TO UPDATE PAGE");
-		id  = request.getParameter("updateid");
-		System.out.println("id got from ENTER ID TO UPDATE PAGE"+id+" POst Method");
-		Query q = new Query();
-		System.out.println("GOING TO QUERY CLASS->TO SELECT EMPLOYEE DETAILS BY ID WHICH GOT FROM ENTER ID TO UPDATE PAGE");
-		Employee emp = q.selectEmployeeById(id);
-		System.out.println(emp);
-		RequestDispatcher rs = request.getRequestDispatcher("/updateEmployee.jsp");
-		request.setAttribute("empId",emp.getEmployeeId());
-		request.setAttribute("pass",emp.getPassword());
-		request.setAttribute("type",emp.getEmployeeType());
-		request.setAttribute("first",emp.getFirstName());
-		request.setAttribute("last",emp.getLastName());
-		request.setAttribute("address",emp.getAddress());
-		request.setAttribute("phone",emp.getPhoneNo());
-		request.setAttribute("email",emp.getEmail());
-		request.setAttribute("gender",emp.getGender());
-		request.setAttribute("hire",emp.getHireDate());
-		request.setAttribute("sal",emp.getSalary());
-		rs.forward(request, response);
 	}
 
 }
